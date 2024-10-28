@@ -1,5 +1,5 @@
 To achieve a parallax effect using JavaScript, you essentially need to capture the user's scroll position, then apply different translation values to various elements on your page based on that scroll position, creating the illusion of depth by making some elements move faster or slower than others as the user scrolls; this is done by manipulating CSS properties like "transform: translateX/Y" with JavaScript based on the scroll position, with each element having a "depth" value that determines its scrolling speed. 
-Key steps involved: 
+
 HTML Structure: 
 Create separate HTML elements (divs) for each layer of your parallax design, with each layer containing its respective image or content. 
 Assign unique identifiers or classes to these layers for easy manipulation with JavaScript. 
