@@ -1,0 +1,30 @@
+Parallax scrolling is a visual effect where background elements move slower than foreground elements, creating an illusion of depth and immersion. Here's how you can implement it using pure JavaScript:
+Basic Parallax Effect
+JavaScript
+
+// Get the elements you want to apply parallax to
+const parallaxElements = document.querySelectorAll('.parallax');
+
+window.addEventListener('scroll', () => {
+  parallaxElements.forEach(element => {
+    // Calculate the parallax offset based on scroll position
+    const scrollTop = window.pageYOffset;
+    const elementTop = element.getBoundingClientRect().top;
+    const offset = scrollTop * (element.dataset.speed || 0.5);
+
+    // Apply the parallax effect using CSS transform
+    element.style.transform = `translateY(${offset}px)`;
+  });
+});
+Explanation:
+Select Elements:
+We use querySelectorAll to select elements with the class "parallax".
+Scroll Event:
+We listen for the scroll event to trigger the parallax effect whenever the user scrolls.
+Calculate Offset:
+For each element, we calculate the parallax offset based on:
+scrollTop: The current vertical scroll position.
+elementTop: The distance of the element from the top of the viewport.
+data-speed: A custom attribute (data-speed) to control the speed of the parallax effect (defaults to 0.5).
+Apply Transform:
+We use the transform property to translate the element vertically by the calculated offset.
